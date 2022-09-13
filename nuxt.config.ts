@@ -7,7 +7,7 @@ const config: NuxtConfig = {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Nintendo PWA',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -60,7 +60,8 @@ const config: NuxtConfig = {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@layer0/nuxt/module', { layer0SourceMaps: true }]
   ],
   /*
    ** Nuxt.js modules
@@ -100,9 +101,23 @@ const config: NuxtConfig = {
      */
     extend(config) {
       config!.resolve!.alias!.vue = path.resolve('./node_modules/vue')
+    },
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {}
+      }
     }
   },
-  buildDir: 'dist'
+  buildDir: 'dist',
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'Commerce',
+        path: '/commerce/:name',
+        component: resolve(__dirname, 'pages/commerce.vue')
+      })
+    }
+  }
 }
-
 export default config
