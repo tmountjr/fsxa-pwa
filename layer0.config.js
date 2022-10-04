@@ -4,8 +4,8 @@ module.exports = {
   connector: '@layer0/nuxt',
   backends: {
     origin: {
-      domainOrIp: 'https://irvin-garcia-fsxa-pwa-default.layer0-limelight.link',
-      hostHeader: 'https://irvin-garcia-fsxa-pwa-default.layer0-limelight.link',
+      domainOrIp: 'https://nintendo-dev-navigationservice.e-spirit.cloud/',
+      hostHeader: 'https://nintendo-dev-navigationservice.e-spirit.cloud/',
       // Disable backend SSL certificate security check, read more on:
       // https://docs.layer0.co/guides/layer0_config#:~:text=browser%20is%20used.-,disableCheckCert,-Boolean
       disableCheckCert: true
