@@ -60,16 +60,16 @@ const config: NuxtConfig = {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    'fsxa-nuxt-module',
+    ['@layer0/nuxt/module', { layer0SourceMaps: true }]
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    'fsxa-nuxt-module'
-  ],
+  modules: [],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -101,8 +101,8 @@ const config: NuxtConfig = {
     extend(config) {
       config!.resolve!.alias!.vue = path.resolve('./node_modules/vue')
     }
-  },
-  buildDir: 'dist'
+  }
+  // buildDir: 'dist'
 }
 
 export default config
