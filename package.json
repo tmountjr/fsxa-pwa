@@ -3,6 +3,7 @@
     "layer0:dev": "node setNodeModules.js && layer0 dev",
     "layer0:build": "node setNodeModules.js && layer0 build",
     "layer0:deploy": "node setNodeModules.js && layer0 deploy",
+    "layer0:run:prod": "node setNodeModules.js && layer0 build && layer0 run -p",
     "dev": "nuxt",
     "build": "nuxt build",
     "generate": "nuxt generate",
