@@ -102,7 +102,6 @@ const config: NuxtConfig = {
       config!.resolve!.alias!.vue = path.resolve('./node_modules/vue')
     }
   }
-  // buildDir: 'dist'
 }
 
 export default config
