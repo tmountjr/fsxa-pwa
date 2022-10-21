@@ -39,7 +39,8 @@
     "fsxa-api": "^10.6.0",
     "fsxa-nuxt-module": "^7.7.0",
     "fsxa-pattern-library": "^8.9.0",
-    "fsxa-ui": "^4.1.1"
+    "fsxa-ui": "^4.1.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.12.7",

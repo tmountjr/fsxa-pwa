@@ -3,7 +3,12 @@ const { nodeFileTrace } = require('@vercel/nft')
 
 const setNodeModules = async () => {
   // Enter an entry point to the app, for example in Nuxt(2), the whole app inside core.js
-  const files = ['./node_modules/@nuxt/core/dist/core.js']
+  const files = [
+    './node_modules/@nuxt/core/dist/core.js',
+    './node_modules/fsxa-nuxt-module/dist/module/index.js',
+    './node_modules/fsxa-nuxt-module/dist/api/index.js',
+    './node_modules/vuex/dist/vuex.js'
+  ]
   // Compute file trace
   const { fileList } = await nodeFileTrace(files)
   // Store set of packages
