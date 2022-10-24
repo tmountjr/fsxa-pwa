@@ -7,14 +7,13 @@ import { nuxtRoutes } from '@layer0/nuxt'
 export default new Router()
   // Prevent search engines from indexing permalink URLs
   .noIndexPermalink()
-  .match('/api/:slug*', ({ renderWithApp }) => {
-    renderWithApp({
-      transformRequest: (req) => {
-        console.log(
-          `[${Date.now()}] ${req.method} ${req.url} ${req.rawBody?.toString()}`
-        )
-      }
-    })
+  .match('/api/:slug*', ({ request, renderWithApp }) => {
+    console.log(
+      `[${Date.now()}] ${request.method} ${
+        request.url
+      } ${request.rawBody?.toString()}`
+    )
+    renderWithApp()
   })
   .match('/service-worker.js', ({ serviceWorker }) => {
     serviceWorker('.nuxt/dist/client/service-worker.js')
