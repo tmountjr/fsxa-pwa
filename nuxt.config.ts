@@ -61,15 +61,16 @@ const config: NuxtConfig = {
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/pwa',
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    'fsxa-nuxt-module',
     ['@layer0/nuxt/module', { layer0SourceMaps: true }]
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    'fsxa-nuxt-module'
+  ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

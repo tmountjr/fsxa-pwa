@@ -4,6 +4,6 @@
 // Learn more about this file at https://docs.layer0.co/guides/layer0_config
 module.exports = {
   connector: '@layer0/nuxt',
-  includeNodeModules: true,
-  includeFiles: require('./getNodeModules')
+  includeNodeModules: true
+  // includeFiles: require('./getNodeModules.js')
 }
