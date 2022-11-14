@@ -1,7 +1,7 @@
 import path from 'path'
-import { NuxtConfig } from '@nuxt/types/config'
+// import { NuxtConfig } from '@nuxt/types/config'
 
-const config: NuxtConfig = {
+const config = {
   ssr: true,
   /*
    ** Headers of the page
@@ -100,7 +100,7 @@ const config: NuxtConfig = {
      ** You can extend webpack config here
      */
     extend(config) {
-      config!.resolve!.alias!.vue = path.resolve('./node_modules/vue')
+      config.resolve.alias.vue = path.resolve('./node_modules/vue')
     }
   }
   // buildDir: 'dist'
