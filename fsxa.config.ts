@@ -1,6 +1,6 @@
 export default {
   devMode: false,
-  defaultLocale: 'de_DE',
+  defaultLocale: 'en_GB',
   useErrorBoundaryWrapper: false,
   components: {
     sections: '~/components/fsxa/sections',
@@ -11,5 +11,5 @@ export default {
     page404: '~/components/fsxa/Page404'
   },
   customRoutes: '~/customRoutes',
-  logLevel: '0'
+  logLevel: '3'
 }
