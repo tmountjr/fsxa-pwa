@@ -10,5 +10,6 @@ export default {
     loader: '~/components/fsxa/Loader',
     page404: '~/components/fsxa/Page404'
   },
-  customRoutes: '~/customRoutes'
+  customRoutes: '~/customRoutes',
+  logLevel: '0'
 }

@@ -7,23 +7,11 @@ export default new Router()
   // Prevent search engines from indexing permalink URLs
   .noIndexPermalink()
 
-  // Ensure that the server middleware routes are accounted for on the L0 side.
-  .match('/api/:slug*', ({ request, cache, renderWithApp }) => {
-    // Log the requests and their request bodies.
-    console.log(
-      `[${Date.now()}] ${request.method} ${
-        request.url
-      } ${request.rawBody?.toString()}`
-    )
-
-    // Do not cache.
-    cache({
-      browser: { maxAgeSeconds: 0 },
-      edge: { maxAgeSeconds: 0 }
-    })
-
-    // Send to the app.
-    renderWithApp()
+  // Intercept any routes that would trigger the infinite loop of the FSXAProxyApi
+  // and dispatch them to a dedicated instance of the FSXARemoteApi.
+  // Configure the deployment details for the API backend in layer0.config.js.
+  .match('/api/:slug*', ({ proxy }) => {
+    proxy('api')
   })
 
   // Attach the service worker.
